@@ -4,17 +4,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LojaWebEF.DAO;
 
 namespace LojaWebEF.Controllers
 {
     public class UsuariosController : Controller
     {
+        private UsuariosDAO _dao;
+
+        public UsuariosController()
+        {
+            _dao = new UsuariosDAO();
+        }
         //
         // GET: /Usuarios/
 
         public ActionResult Index()
         {
-            IEnumerable<Usuario> usuarios = new List<Usuario>();
+            IEnumerable<Usuario> usuarios = _dao.Lista();
             return View(usuarios);
         }
 
@@ -25,6 +32,7 @@ namespace LojaWebEF.Controllers
 
         public ActionResult Adiciona(Usuario usuario)
         {
+            _dao.Adiciona(usuario);
             return RedirectToAction("Index");
         }
 
@@ -35,7 +43,7 @@ namespace LojaWebEF.Controllers
 
         public ActionResult Visualiza(int id)
         {
-            Usuario usuario = new Usuario();
+            Usuario usuario = _dao.BuscaPorId(id);
             return View(usuario);
         }
 

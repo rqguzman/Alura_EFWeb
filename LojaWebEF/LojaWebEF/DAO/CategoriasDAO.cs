@@ -2,6 +2,7 @@
 using LojaWebEF.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -18,27 +19,33 @@ namespace LojaWebEF.DAO
 
         public void Adiciona(Categoria categoria)
         {
-            
+            contexto.Categorias.Add(categoria);
+            contexto.SaveChanges();
+            contexto.Dispose();
         }
 
         public void Remove(Categoria categoria)
         {
-
+            contexto.Entry(categoria).State = EntityState.Modified;
+            contexto.SaveChanges();
+            contexto.Dispose();
         }
 
         public void Atualiza(Categoria categoria)
         {
-
+            contexto.Entry(categoria).State = EntityState.Modified;
+            contexto.SaveChanges();
+            contexto.Dispose();
         }
 
         public Categoria BuscaPorId(int id)
         {
-            return null;
+            return contexto.Categorias.Find(id);
         }
 
         public IEnumerable<Categoria> Lista()
         {
-            return new List<Categoria>();
+            return contexto.Categorias.ToList();
         }
 
         public IEnumerable<Categoria> BuscaPorNome(string nome)

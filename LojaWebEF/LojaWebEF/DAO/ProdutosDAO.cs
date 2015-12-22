@@ -1,6 +1,7 @@
 ﻿using LojaWebEF.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -17,27 +18,33 @@ namespace LojaWebEF.DAO
 
         public void Adiciona(Produto produto)
         {
-            
+            contexto.Produtos.Add(produto);
+            contexto.SaveChanges();
+            contexto.Dispose();
         }
 
         public void Remove(Produto produto)
         {
-            
+            contexto.Produtos.Remove(produto);
+            contexto.SaveChanges();
+            contexto.Dispose();
         }
 
         public void Atualiza(Produto produto)
         {
-            
+            contexto.Entry(produto).State = EntityState.Modified;
+            contexto.SaveChanges();
+            contexto.Dispose();
         }
 
         public Produto BuscaPorId(int id)
         {
-            return new Produto();
+            return contexto.Produtos.Find(id);
         }
 
         public IEnumerable<Produto> Lista()
         {
-            return new List<Produto>();
+            return contexto.Produtos.ToList();
         }
 
         public IEnumerable<Produto> ProdutosComPrecoMaiorDoQue(decimal? preco)
