@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -189,6 +190,7 @@
     <Compile Include="Entidades\Produto.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Entidades\Venda.cs" />
+    <Compile Include="Filters\SaveChangesFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -331,9 +333,7 @@
     <Content Include="Views\Vendas\Index.cshtml" />
     <Content Include="Views\Vendas\ListaProdutos.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Filters\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

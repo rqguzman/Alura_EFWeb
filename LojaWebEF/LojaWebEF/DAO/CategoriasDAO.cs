@@ -20,22 +20,16 @@ namespace LojaWebEF.DAO
         public void Adiciona(Categoria categoria)
         {
             _contexto.Categorias.Add(categoria);
-            _contexto.SaveChanges();
-            _contexto.Dispose();
         }
 
         public void Remove(Categoria categoria)
         {
             _contexto.Entry(categoria).State = EntityState.Modified;
-            _contexto.SaveChanges();
-            _contexto.Dispose();
         }
 
         public void Atualiza(Categoria categoria)
         {
             _contexto.Entry(categoria).State = EntityState.Modified;
-            _contexto.SaveChanges();
-            _contexto.Dispose();
         }
 
         public Categoria BuscaPorId(int id)

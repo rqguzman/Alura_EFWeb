@@ -19,22 +19,16 @@ namespace LojaWebEF.DAO
         public void Adiciona(Produto produto)
         {
             _contexto.Produtos.Add(produto);
-            _contexto.SaveChanges();
-            _contexto.Dispose();
         }
 
         public void Remove(Produto produto)
         {
             _contexto.Produtos.Remove(produto);
-            _contexto.SaveChanges();
-            _contexto.Dispose();
         }
 
         public void Atualiza(Produto produto)
         {
             _contexto.Entry(produto).State = EntityState.Modified;
-            _contexto.SaveChanges();
-            _contexto.Dispose();
         }
 
         public Produto BuscaPorId(int id)

@@ -19,22 +19,17 @@ namespace LojaWebEF.DAO
         public void Adiciona(Usuario usuario)
         {
             _contexto.Usuarios.Add(usuario);
-            _contexto.SaveChanges();
-            _contexto.Dispose();
+            
         }
 
         public void Remove(Usuario usuario)
         {
             _contexto.Usuarios.Remove(usuario);
-            _contexto.SaveChanges();
-            _contexto.Dispose();
         }
 
         public void Atualiza(Usuario usuario)
         {
             _contexto.Entry(usuario).State = EntityState.Modified;
-            _contexto.SaveChanges();
-            _contexto.Dispose();
         }
 
         public Usuario BuscaPorId(int id)
