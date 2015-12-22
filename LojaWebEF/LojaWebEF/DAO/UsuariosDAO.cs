@@ -9,43 +9,43 @@ namespace LojaWebEF.DAO
 {
     public class UsuariosDAO
     {
-        private EntidadesContext contexto;
+        private EntidadesContext _contexto;
 
-        public UsuariosDAO()
+        public UsuariosDAO(EntidadesContext contexto)
         {
-            this.contexto = new EntidadesContext();
+            this._contexto = contexto;
         }
 
         public void Adiciona(Usuario usuario)
         {
-            contexto.Usuarios.Add(usuario);
-            contexto.SaveChanges();
-            contexto.Dispose();
+            _contexto.Usuarios.Add(usuario);
+            _contexto.SaveChanges();
+            _contexto.Dispose();
         }
 
         public void Remove(Usuario usuario)
         {
-            contexto.Usuarios.Remove(usuario);
-            contexto.SaveChanges();
-            contexto.Dispose();
+            _contexto.Usuarios.Remove(usuario);
+            _contexto.SaveChanges();
+            _contexto.Dispose();
         }
 
         public void Atualiza(Usuario usuario)
         {
-            contexto.Entry(usuario).State = EntityState.Modified;
-            contexto.SaveChanges();
-            contexto.Dispose();
+            _contexto.Entry(usuario).State = EntityState.Modified;
+            _contexto.SaveChanges();
+            _contexto.Dispose();
         }
 
         public Usuario BuscaPorId(int id)
         {
 
-            return contexto.Usuarios.Find(id);
+            return _contexto.Usuarios.Find(id);
         }
 
         public IEnumerable<Usuario> Lista()
         {
-            return contexto.Usuarios.ToList();
+            return _contexto.Usuarios.ToList();
         }
     }
 }

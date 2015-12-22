@@ -10,42 +10,42 @@ namespace LojaWebEF.DAO
 {
     public class CategoriasDAO
     {
-        private EntidadesContext contexto;
+        private EntidadesContext _contexto;
 
-        public CategoriasDAO()
+        public CategoriasDAO(EntidadesContext contexto)
         {
-            this.contexto = new EntidadesContext();
+            this._contexto = contexto;
         }
 
         public void Adiciona(Categoria categoria)
         {
-            contexto.Categorias.Add(categoria);
-            contexto.SaveChanges();
-            contexto.Dispose();
+            _contexto.Categorias.Add(categoria);
+            _contexto.SaveChanges();
+            _contexto.Dispose();
         }
 
         public void Remove(Categoria categoria)
         {
-            contexto.Entry(categoria).State = EntityState.Modified;
-            contexto.SaveChanges();
-            contexto.Dispose();
+            _contexto.Entry(categoria).State = EntityState.Modified;
+            _contexto.SaveChanges();
+            _contexto.Dispose();
         }
 
         public void Atualiza(Categoria categoria)
         {
-            contexto.Entry(categoria).State = EntityState.Modified;
-            contexto.SaveChanges();
-            contexto.Dispose();
+            _contexto.Entry(categoria).State = EntityState.Modified;
+            _contexto.SaveChanges();
+            _contexto.Dispose();
         }
 
         public Categoria BuscaPorId(int id)
         {
-            return contexto.Categorias.Find(id);
+            return _contexto.Categorias.Find(id);
         }
 
         public IEnumerable<Categoria> Lista()
         {
-            return contexto.Categorias.ToList();
+            return _contexto.Categorias.ToList();
         }
 
         public IEnumerable<Categoria> BuscaPorNome(string nome)

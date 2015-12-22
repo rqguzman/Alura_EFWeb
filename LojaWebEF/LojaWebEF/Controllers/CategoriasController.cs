@@ -13,9 +13,9 @@ namespace LojaWebEF.Controllers
     {
         private CategoriasDAO _dao;
 
-        public CategoriasController()
+        public CategoriasController(CategoriasDAO dao)
         {
-            _dao = new CategoriasDAO();
+            _dao = dao;
         }
         //
         // GET: /Categorias/

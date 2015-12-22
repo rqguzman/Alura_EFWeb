@@ -12,9 +12,9 @@ namespace LojaWebEF.Controllers
     {
         private UsuariosDAO _dao;
 
-        public UsuariosController()
+        public UsuariosController(UsuariosDAO dao)
         {
-            _dao = new UsuariosDAO();
+            _dao = dao;
         }
         //
         // GET: /Usuarios/

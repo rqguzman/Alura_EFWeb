@@ -9,42 +9,42 @@ namespace LojaWebEF.DAO
 {
     public class ProdutosDAO
     {
-        private EntidadesContext contexto;
+        private EntidadesContext _contexto;
 
-        public ProdutosDAO()
+        public ProdutosDAO(EntidadesContext contexto)
         {
-            this.contexto = new EntidadesContext();
+            this._contexto = contexto;
         }
 
         public void Adiciona(Produto produto)
         {
-            contexto.Produtos.Add(produto);
-            contexto.SaveChanges();
-            contexto.Dispose();
+            _contexto.Produtos.Add(produto);
+            _contexto.SaveChanges();
+            _contexto.Dispose();
         }
 
         public void Remove(Produto produto)
         {
-            contexto.Produtos.Remove(produto);
-            contexto.SaveChanges();
-            contexto.Dispose();
+            _contexto.Produtos.Remove(produto);
+            _contexto.SaveChanges();
+            _contexto.Dispose();
         }
 
         public void Atualiza(Produto produto)
         {
-            contexto.Entry(produto).State = EntityState.Modified;
-            contexto.SaveChanges();
-            contexto.Dispose();
+            _contexto.Entry(produto).State = EntityState.Modified;
+            _contexto.SaveChanges();
+            _contexto.Dispose();
         }
 
         public Produto BuscaPorId(int id)
         {
-            return contexto.Produtos.Find(id);
+            return _contexto.Produtos.Find(id);
         }
 
         public IEnumerable<Produto> Lista()
         {
-            return contexto.Produtos.ToList();
+            return _contexto.Produtos.ToList();
         }
 
         public IEnumerable<Produto> ProdutosComPrecoMaiorDoQue(decimal? preco)
