@@ -20,6 +20,9 @@ namespace LojaWebEF
             var usuarioBuilder = modelBuilder.Entity<Usuario>();
             usuarioBuilder.Property(usuario => usuario.Nome).HasColumnName("col_Nome");
             usuarioBuilder.ToTable("tbl_Usuarios");
+
+            var categoriaBuilder = modelBuilder.Entity<Categoria>();
+            categoriaBuilder.HasMany(categoria => categoria.Produtos).WithOptional(produto => produto.Categoria);
         }
     }
 }
