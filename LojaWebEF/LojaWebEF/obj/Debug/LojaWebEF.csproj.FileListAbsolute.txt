@@ -167,11 +167,6 @@ C:\Users\victor\Desktop\Correções Exercícios EF\LojaWebEF\obj\Debug\LojaWebEF
 C:\Users\victor\Desktop\Correções Exercícios EF\LojaWebEF\obj\Debug\LojaWebEF.csproj.GenerateResource.Cache
 C:\Users\victor\Desktop\Correções Exercícios EF\LojaWebEF\obj\Debug\LojaWebEF.dll
 C:\Users\victor\Desktop\Correções Exercícios EF\LojaWebEF\obj\Debug\LojaWebEF.pdb
-C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.csproj.App.config
-C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.Migrations.InitialMigration.resources
-C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.csproj.GenerateResource.Cache
-C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.dll
-C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.pdb
 C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\bin\LojaWebEF.dll.config
 C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\bin\LojaWebEF.dll
 C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\bin\LojaWebEF.pdb
@@ -239,4 +234,9 @@ C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\bin\WebMatrix.Dat
 C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\bin\WebMatrix.WebData.xml
 C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\bin\Org.Mentalis.Security.Cryptography.xml
 C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\bin\Mono.Math.xml
+C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.csproj.App.config
+C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.Migrations.InitialMigration.resources
 C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.Migrations.Relacionamento_CategoriaProduto.resources
+C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.csproj.GenerateResource.Cache
+C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.dll
+C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.pdb
