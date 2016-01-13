@@ -45,7 +45,10 @@ namespace LojaWebEF.DAO
 
         public IEnumerable<Categoria> BuscaPorNome(string nome)
         {
-            return new List<Categoria>();
+            var busca = from c in _contexto.Categorias
+                        where c.Nome == nome
+                        select c;
+            return busca.ToList();
         }
 
         public IEnumerable<ProdutosPorCategoria> ListaNumeroDeProdutosPorCategoria()
