@@ -240,4 +240,3 @@ C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWeb
 C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.csproj.GenerateResource.Cache
 C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.dll
 C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.pdb
-C:\Users\rqguzman\Source\Repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.csprojResolveAssemblyReference.cache
