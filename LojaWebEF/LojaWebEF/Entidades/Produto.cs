@@ -14,5 +14,9 @@ namespace LojaWebEF.Entidades
         public string Descricao { get; set; }
 
         public decimal Preco { get; set; }
+
+        public int? CategoriaId { get; set; }
+        public virtual Categoria Categoria { get; set; }
+
     }
 }

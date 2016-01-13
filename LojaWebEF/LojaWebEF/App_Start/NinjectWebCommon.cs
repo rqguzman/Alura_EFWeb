@@ -1,3 +1,6 @@
+using System.Web.Mvc;
+using LojaWebEF.Filters;
+
 [assembly: WebActivator.PreApplicationStartMethod(typeof(LojaWebEF.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(LojaWebEF.App_Start.NinjectWebCommon), "Stop")]
 
@@ -10,6 +13,8 @@ namespace LojaWebEF.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+
+    using Ninject.Web.Mvc.FilterBindingSyntax;
 
     public static class NinjectWebCommon 
     {
@@ -53,6 +58,9 @@ namespace LojaWebEF.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            int ordemDeExecucao = 1;
+            kernel.BindFilter<SaveChangesFilter>(FilterScope.Global, ordemDeExecucao);
+            kernel.Bind<EntidadesContext>().ToSelf().InRequestScope();
         }        
     }
 }

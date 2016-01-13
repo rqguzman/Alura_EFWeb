@@ -5,11 +5,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LojaWebEF.DAO;
 
 namespace LojaWebEF.Controllers
 {
     public class CategoriasController : Controller
     {
+        private CategoriasDAO _dao;
+
+        public CategoriasController(CategoriasDAO dao)
+        {
+            _dao = dao;
+        }
         //
         // GET: /Categorias/
 
@@ -26,6 +33,7 @@ namespace LojaWebEF.Controllers
 
         public ActionResult Adiciona(Categoria categoria)
         {
+            _dao.Adiciona(categoria);
             return RedirectToAction("Index");
         }
 
@@ -37,12 +45,13 @@ namespace LojaWebEF.Controllers
 
         public ActionResult Visualiza(int id)
         {
-            Categoria categoria = new Categoria();
+            Categoria categoria = _dao.BuscaPorId(id);
             return View(categoria);
         }
 
         public ActionResult Atualiza(Categoria categoria)
         {
+            
             return RedirectToAction("Index");
         }
 
@@ -56,7 +65,7 @@ namespace LojaWebEF.Controllers
         {
             ViewBag.Nome = nome;
 
-            IEnumerable<Categoria> categorias = new List<Categoria>();
+            IEnumerable<Categoria> categorias = _dao.BuscaPorNome(nome);
             return View(categorias);
         }
 

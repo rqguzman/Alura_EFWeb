@@ -10,11 +10,17 @@ namespace LojaWebEF.Controllers
 {
     public class ProdutosController : Controller
     {
+        private ProdutosDAO _dao;
+
+        public ProdutosController(ProdutosDAO dao)
+        {
+            _dao = dao;
+        }
         //
         // GET: /Produtos/
         public ActionResult Index()
         {
-            IEnumerable<Produto> produtos = new List<Produto>();
+            IEnumerable<Produto> produtos = _dao.Lista();
             return View(produtos);
         }
 
@@ -25,6 +31,7 @@ namespace LojaWebEF.Controllers
 
         public ActionResult Adiciona(Produto produto)
         {
+            _dao.Adiciona(produto);
             return RedirectToAction("Index");
         }
 
@@ -35,7 +42,7 @@ namespace LojaWebEF.Controllers
 
         public ActionResult Visualiza(int id)
         {
-            Produto p = new Produto();
+            Produto p = _dao.BuscaPorId(id);
             return View(p);
         }
 
@@ -46,8 +53,8 @@ namespace LojaWebEF.Controllers
 
         public ActionResult ProdutosComPrecoMinimo(decimal? preco)
         {
-            ViewBag.Preco = preco;
-            IEnumerable<Produto> produtos = new List<Produto>();
+            //ViewBag.Preco = preco;
+            IEnumerable<Produto> produtos = _dao.ProdutosComPrecoMaiorDoQue(preco);
             return View(produtos);
         }
 

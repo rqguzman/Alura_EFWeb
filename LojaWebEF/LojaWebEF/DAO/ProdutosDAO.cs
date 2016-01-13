@@ -1,6 +1,8 @@
 ﻿using LojaWebEF.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -8,41 +10,46 @@ namespace LojaWebEF.DAO
 {
     public class ProdutosDAO
     {
-        private EntidadesContext contexto;
+        private EntidadesContext _contexto;
 
-        public ProdutosDAO()
+        public ProdutosDAO(EntidadesContext contexto)
         {
-            this.contexto = new EntidadesContext();
+            this._contexto = contexto;
         }
 
         public void Adiciona(Produto produto)
         {
-            
+            _contexto.Produtos.Add(produto);
         }
 
         public void Remove(Produto produto)
         {
-            
+            _contexto.Produtos.Remove(produto);
         }
 
         public void Atualiza(Produto produto)
         {
-            
+            _contexto.Entry(produto).State = EntityState.Modified;
         }
 
         public Produto BuscaPorId(int id)
         {
-            return new Produto();
+            return _contexto.Produtos.Find(id);
         }
 
         public IEnumerable<Produto> Lista()
         {
-            return new List<Produto>();
+            return _contexto.Produtos.ToList();
         }
 
         public IEnumerable<Produto> ProdutosComPrecoMaiorDoQue(decimal? preco)
         {
-            return new List<Produto>();
+            decimal minimo = preco.GetValueOrDefault(0);
+
+            var busca = from p in _contexto.Produtos
+                where p.Preco > minimo
+                select p;
+            return busca.ToList();
         }
 
         public IEnumerable<Produto> ProdutosDaCategoria(string nomeCategoria)
