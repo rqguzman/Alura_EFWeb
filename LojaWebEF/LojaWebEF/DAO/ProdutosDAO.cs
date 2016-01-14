@@ -44,7 +44,12 @@ namespace LojaWebEF.DAO
 
         public IEnumerable<Produto> ProdutosComPrecoMaiorDoQue(decimal? preco)
         {
-            return new List<Produto>();
+            decimal minimo = preco.GetValueOrDefault(0);
+
+            var busca = from p in _contexto.Produtos
+                where p.Preco > minimo
+                select p;
+            return busca.ToList();
         }
 
         public IEnumerable<Produto> ProdutosDaCategoria(string nomeCategoria)

@@ -53,8 +53,8 @@ namespace LojaWebEF.Controllers
 
         public ActionResult ProdutosComPrecoMinimo(decimal? preco)
         {
-            ViewBag.Preco = preco;
-            IEnumerable<Produto> produtos = new List<Produto>();
+            //ViewBag.Preco = preco;
+            IEnumerable<Produto> produtos = _dao.ProdutosComPrecoMaiorDoQue(preco);
             return View(produtos);
         }
 

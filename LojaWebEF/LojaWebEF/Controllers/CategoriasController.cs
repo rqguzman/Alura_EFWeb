@@ -65,7 +65,7 @@ namespace LojaWebEF.Controllers
         {
             ViewBag.Nome = nome;
 
-            IEnumerable<Categoria> categorias = _dao.Lista();
+            IEnumerable<Categoria> categorias = _dao.BuscaPorNome(nome);
             return View(categorias);
         }
 
