@@ -53,8 +53,17 @@ namespace LojaWebEF.DAO
 
         public IEnumerable<ProdutosPorCategoria> ListaNumeroDeProdutosPorCategoria()
         {
-            return new List<ProdutosPorCategoria>();
+            var busca = from c in _contexto.Categorias
+                        select new ProdutosPorCategoria ()
+                        {
+                            Categoria = c,
+                            NumeroDeProdutos = c.Produtos.Count
+                        };
+
+            List<ProdutosPorCategoria> resultado = busca.ToList();
+
+            return resultado;
         }
-    }
+    }   
 
 }

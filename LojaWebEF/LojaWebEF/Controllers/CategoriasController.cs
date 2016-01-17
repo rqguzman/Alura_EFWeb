@@ -71,7 +71,7 @@ namespace LojaWebEF.Controllers
 
         public ActionResult NumeroDeProdutosPorCategoria()
         {
-            IEnumerable<ProdutosPorCategoria> produtosPorCategoria = new List<ProdutosPorCategoria>();
+            IEnumerable<ProdutosPorCategoria> produtosPorCategoria = _dao.ListaNumeroDeProdutosPorCategoria();
             return View(produtosPorCategoria);
         }
     }
