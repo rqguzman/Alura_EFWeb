@@ -57,7 +57,7 @@ namespace LojaWebEF.Controllers
 
         public ActionResult CategoriasEProdutos()
         {
-            IEnumerable<Categoria> categorias = new List<Categoria>();
+            IEnumerable<Categoria> categorias = _dao.Lista();
             return View(categorias);
         }
 

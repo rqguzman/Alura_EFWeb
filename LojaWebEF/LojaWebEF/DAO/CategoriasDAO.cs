@@ -40,7 +40,11 @@ namespace LojaWebEF.DAO
 
         public IEnumerable<Categoria> Lista()
         {
-            return _contexto.Categorias.ToList();
+            var busca = from c in _contexto.Categorias.Include("Produtos")
+                        select c;
+
+            System.Diagnostics.Trace.WriteLine(busca);
+            return busca.ToList();
         }
 
         public IEnumerable<Categoria> BuscaPorNome(string nome)

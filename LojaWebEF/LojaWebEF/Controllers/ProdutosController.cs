@@ -86,7 +86,7 @@ namespace LojaWebEF.Controllers
         {
             int paginaAtual = pagina.GetValueOrDefault(1);
             ViewBag.Pagina = paginaAtual;
-            IEnumerable<Produto> produtos = new List<Produto>();
+            IEnumerable<Produto> produtos = _dao.ListaPaginada(paginaAtual);
             return View(produtos);
         }
     }
