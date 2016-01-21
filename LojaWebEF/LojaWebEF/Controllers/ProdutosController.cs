@@ -53,31 +53,31 @@ namespace LojaWebEF.Controllers
 
         public ActionResult ProdutosComPrecoMinimo(decimal? preco)
         {
-            //ViewBag.Preco = preco;
+            ViewBag.Preco = preco;
             IEnumerable<Produto> produtos = _dao.ProdutosComPrecoMaiorDoQue(preco);
             return View(produtos);
         }
 
         public ActionResult ProdutosDaCategoria(string nomeCategoria)
         {
-            //ViewBag.NomeCategoria = nomeCategoria;
+            ViewBag.NomeCategoria = nomeCategoria;
             IEnumerable<Produto> produtos = _dao.ProdutosDaCategoria(nomeCategoria);
             return View(produtos.ToList());
         }
 
         public ActionResult ProdutosDaCategoriaComPrecoMinimo(decimal? preco, string nomeCategoria)
         {
-            //ViewBag.Preco = preco;
-            //ViewBag.NomeCategoria = nomeCategoria;
+            ViewBag.Preco = preco;
+            ViewBag.NomeCategoria = nomeCategoria;
             IEnumerable<Produto> produtos = _dao.ProdutosDaCategoriaComPrecoMaiorDoQue(preco, nomeCategoria);
             return View(produtos);
         }
 
         public ActionResult BuscaDinamica(decimal? preco, string nomeCategoria, string nome)
         {
-            //ViewBag.Preco = preco;
-            //ViewBag.Nome = nome;
-            //ViewBag.NomeCategoria = nomeCategoria;
+            ViewBag.Preco = preco;
+            ViewBag.Nome = nome;
+            ViewBag.NomeCategoria = nomeCategoria;
 
             IEnumerable<Produto> produtos = new List<Produto>();
             return View(produtos);

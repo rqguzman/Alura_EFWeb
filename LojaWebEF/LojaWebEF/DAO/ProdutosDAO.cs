@@ -39,8 +39,9 @@ namespace LojaWebEF.DAO
 
         public IEnumerable<Produto> Lista()
         {
-            var busca = from p in _contexto.Produtos.Include("Categorias")
+            var busca = from p in _contexto.Produtos.Include("Categoria")
                         select p;
+
             return busca.ToList();
         }
 
@@ -80,8 +81,7 @@ namespace LojaWebEF.DAO
                         select p;
             
                 busca.Skip(10 * (paginaAtual - 1));
-                return busca.Take(10).ToList();
-            }          
+                return busca.Take(10).ToList();                     
         }
 
         public IEnumerable<Produto> BuscaPorPrecoCategoriaENome(decimal? preco, string nomeCategoria, string nome)

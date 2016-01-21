@@ -313,4 +313,3 @@ C:\repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.Migrations.Relacion
 C:\repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.csproj.GenerateResource.Cache
 C:\repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.dll
 C:\repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.pdb
-C:\repos\Alura_EFWeb\LojaWebEF\LojaWebEF\obj\Debug\LojaWebEF.csprojResolveAssemblyReference.cache
